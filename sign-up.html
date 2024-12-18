@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="date"],
+    form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+    .radio-group, .checkbox-group {
+      margin-bottom: 20px;
+    }
+    .radio-group label,
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    footer p {
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Signup Now</h1>
+    <p>Join us to explore more features!</p>
+  </header>
+  
+  <main>
+    <form id="signup-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required minlength="8" placeholder="Enter your password">
+      
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required placeholder="Re-enter your password">
+      
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+      
+      <div class="radio-group">
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male" required> Male
+        <input type="radio" name="gender" value="female" required> Female
+      </div>
+      
+      <div class="checkbox-group">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+      </div>
+      
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+  
+  <footer>
+    <p>© 2024 Your Company. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      // Validate Password Match
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+      
+      // Simulate Form Submission
+      alert("Signup successful!");
+    });
+  </script>
+</body>
+</html>
